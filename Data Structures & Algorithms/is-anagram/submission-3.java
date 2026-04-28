@@ -9,12 +9,17 @@ class Solution {
 
         // Storing frequency of the elements in the 1st String
         // 'toCharArray' is used to change String to charachter array
+        
         // Use 'put' to enter elements in array
         for (char a : s.toCharArray()){
             c.put(a, c.getOrDefault(a,0) + 1);
         }
 
         // Deleting each value corresponding to the key in the HashMap
+        
+        // We are here using 'getOrDefault' because initially the value maynot be there for the given charachter, 
+        // like say if the element is not present in the first String, so it will trow an null pointer exception, 
+        // to bypass that we're using this. 
         for (char a : t.toCharArray()){
             c.put(a, c.getOrDefault(a,0) - 1);
         }
